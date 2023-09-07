@@ -1,9 +1,51 @@
-<html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        
-        <script src="index.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice creator</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Invoice creator</h1>
+        <h2>Thanks for choosing GoodCorp, LLC!</h2>
+      </header>
+      <main>
+        <div class="tasks">
+          <button class="task-btn">Wash car: $10</button>
+          <button class="task-btn">Mow lawn: $20</button>
+          <button class="task-btn">Pull weeds: $30</button>
+        </div>
+
+        <div class="headings">
+          <p class="invoice-heading">TASK</p>
+          <p class="invoice-heading">TOTAL</p>
+        </div>
+
+        <div class="invoice-items">
+          <div class="invoice-item">
+            <p class="line-item">Wash car</p>
+            <p class="line-item-price">$10</p>
+          </div>
+          <div class="invoice-item">
+            <p class="line-item">Mow lawn</p>
+            <p class="line-item-price">$20</p>
+          </div>
+          <div class="invoice-item">
+            <p class="line-item">Pull weeds</p>
+            <p class="line-item-price">$30</p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>
