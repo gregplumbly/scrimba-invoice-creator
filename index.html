@@ -20,9 +20,9 @@
       </header>
       <main>
         <div class="tasks">
-          <button class="task-btn">Wash car: $10</button>
-          <button class="task-btn">Mow lawn: $20</button>
-          <button class="task-btn">Pull weeds: $30</button>
+          <button class="task-btn" id="car">Wash car: $10</button>
+          <button class="task-btn" id="lawn">Mow lawn: $20</button>
+          <button class="task-btn" id="weeds">Pull weeds: $30</button>
         </div>
 
         <div class="headings">
@@ -30,19 +30,18 @@
           <p class="invoice-heading">TOTAL</p>
         </div>
 
-        <div class="invoice-items">
-          <div class="invoice-item">
-            <p class="line-item">Wash car</p>
-            <p class="line-item-price">$10</p>
-          </div>
-          <div class="invoice-item">
-            <p class="line-item">Mow lawn</p>
-            <p class="line-item-price">$20</p>
-          </div>
-          <div class="invoice-item">
-            <p class="line-item">Pull weeds</p>
-            <p class="line-item-price">$30</p>
-          </div>
+        <div class="invoice-items" id="invoice-items">
+          <!-- display items from js -->
+        </div>
+
+        <div class="headings">
+          <p class="invoice-heading">NOTES</p>
+          <p class="invoice-heading">TOTAL AMOUNT</p>
+        </div>
+
+        <div class="headings">
+          <p class="invoice-heading">We accept cash, credit card, or PayPal</p>
+          <p class="line-item-price" id="invoice-total">$0</p>
         </div>
       </main>
     </div>

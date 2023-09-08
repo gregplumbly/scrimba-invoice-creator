@@ -1,7 +1,21 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
-body {
+body,
+h1,
+h2,
+p {
   margin: 0;
   padding: 0;
+}
+
+p {
+  margin: 0.4rem;
 }
 
 body {
@@ -73,7 +87,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
+  padding: 4px 4px;
   /* outline: 1px solid #d5d4d8; */
 }
 
@@ -99,7 +113,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
+  padding: 2px 20px;
   /* outline: 1px solid #d5d4d8; */
 }
 
@@ -107,9 +121,15 @@ main {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  color: #4a4e74;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 100% */
 }
 
-.invoice-item {
+.line-item-price {
   color: #4a4e74;
   font-family: Inter;
   font-size: 20px;
