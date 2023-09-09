@@ -10,6 +10,7 @@ const invoiceItems = document.getElementById("invoice-items");
 
 function renderItems() {
   invoiceItems.innerHTML = "";
+
   itemsArray.forEach(({ task, price }) => {
     const invoiceItem = document.createElement("div");
     invoiceItem.classList.add("invoice-item");
@@ -22,9 +23,17 @@ function renderItems() {
 
   const total = itemsArray.reduce((acc, { price }) => acc + price, 0);
   console.log(total);
+
   const totalEl = document.getElementById("invoice-total");
-  totalEl.innerHTML = `$${total}`;
+  totalEl.textContent = `$${total}`;
 }
+
+document.getElementById('send-invoice-btn').addEventListener('click', () => {
+  // Empty the array
+  itemsArray = [];
+  // Re-render
+  renderItems();
+});
 
 document.querySelectorAll(".task-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
