@@ -7,32 +7,41 @@ const taskMap = {
 let itemsArray = [];
 
 const invoiceItems = document.getElementById("invoice-items");
+const invoiceNote = document.getElementById("invoice-note");
 
 function renderItems() {
   invoiceItems.innerHTML = "";
 
-  itemsArray.forEach(({ task, price }) => {
-    const invoiceItem = document.createElement("div");
-    invoiceItem.classList.add("invoice-item");
-    invoiceItem.innerHTML = `
-      <p class="line-item">${task}</p>
-      <p class="line-item-price">$${price}</p>
-    `;
-    invoiceItems.appendChild(invoiceItem);
-  });
+  if (itemsArray.length) {
+    itemsArray.forEach(({ task, price }) => {
+      const invoiceItem = document.createElement("div");
+      invoiceItem.classList.add("invoice-item");
+      invoiceItem.innerHTML = `
+        <p class="line-item">${task}</p>
+        <p class="line-item-price">$${price}</p>
+      `;
+      invoiceItems.appendChild(invoiceItem);
+    });    
+
+    invoiceNote.classList.remove("hide");
+  }
 
   const total = itemsArray.reduce((acc, { price }) => acc + price, 0);
   console.log(total);
 
   const totalEl = document.getElementById("invoice-total");
   totalEl.textContent = `$${total}`;
+
 }
 
-document.getElementById('send-invoice-btn').addEventListener('click', () => {
+// Clear invoice on 'Send invoice' button click
+document.getElementById("send-invoice-btn").addEventListener("click", () => {
   // Empty the array
   itemsArray = [];
   // Re-render
   renderItems();
+  // Hide note
+  invoiceNote.classList.add('hide');
 });
 
 document.querySelectorAll(".task-btn").forEach((btn) => {
