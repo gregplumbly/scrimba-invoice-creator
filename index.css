@@ -16,11 +16,11 @@ p {
 
 body {
   background: #1c1c1c;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 button {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   cursor: pointer;
 }
 
@@ -67,7 +67,7 @@ main {
 .task-btn {
   border-radius: 7px;
   border: 1px solid #d5d4d8;
-  background: #fff;  
+  background: #fff;
   color: #4a4e74;
   width: 143px;
   height: 45px;
@@ -77,33 +77,73 @@ main {
   font-weight: 500;
 }
 
+.freetext-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* border: #3770ed 1px solid; */
+  margin-bottom: 10px;
+}
+
+.task-input {
+  /* border-radius: 7px; */
+  /* border: 1px solid #d5d4d8; */
+  border: 1px solid lightgray;
+  background: #fff;
+  color: #4a4e74;
+  width: 143px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 70%;
+  padding: 0 0 0 10px;
+}
+
+/* select */
+.amount {
+  height: 40px;
+  width: 15%;
+}
+
+.freetext-btn {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .tasks {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.task-header{
+.task-header {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
-  color: #918E9B;
+  color: #918e9b;
   margin-top: 43px;
 }
 
 .total-header {
   display: flex;
   justify-content: space-between;
-  color: #918E9B;
+  color: #918e9b;
   font-size: 0.75rem;
   line-height: 32px;
   padding-top: 11px;
-  border-top: 1px solid #C3C6DB;
+  border-top: 1px solid #c3c6db;
 }
 
-.task-heading, .total-heading {
+.task-heading,
+.total-heading {
   margin: 0;
-  font-size: 0.75rem; 
+  font-size: 0.75rem;
 }
 
 .task-heading {
@@ -123,19 +163,18 @@ main {
 .invoice-note {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #4A4E74;
+  color: #4a4e74;
 }
 
 .invoice-total {
-  color: #4A4E74;
+  color: #4a4e74;
   font-weight: 600;
   font-size: 2.25rem;
 }
 
 .invoice-total-zero {
-  color: #918E9B;
+  color: #918e9b;
 }
-
 
 .invoice-items {
   display: flex;
@@ -163,7 +202,7 @@ main {
 }
 
 .line-item-price {
-  color: #918E9B;
+  color: #918e9b;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 300;
@@ -172,7 +211,7 @@ main {
 }
 
 .line-item-price-amt {
-  color: #4A4E74;
+  color: #4a4e74;
 }
 
 .hide {
@@ -185,8 +224,8 @@ main {
 }
 
 .send-invoice-btn {
-  background: #3770ED;
-  color: #FFF;
+  background: #3770ed;
+  color: #fff;
   font-size: 1rem;
   padding: 9px 0;
   width: 100%;

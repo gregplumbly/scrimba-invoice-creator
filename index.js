@@ -25,10 +25,9 @@ function renderItems() {
       invoiceItems.appendChild(invoiceItem);
       sendInvoiceBtn.classList.remove("btn-disabled");
       totalEl.classList.remove("invoice-total-zero");
-    });    
+    });
 
     invoiceNote.classList.remove("hide");
-    
   } else {
     totalEl.classList.add("invoice-total-zero");
   }
@@ -62,6 +61,29 @@ document.querySelectorAll(".task-btn").forEach((btn) => {
       renderItems();
     }
   });
+});
+
+// entering tasks manually
+const freestyleInput = document.getElementById("freetext-input");
+const addButton = document.getElementById("freetext-btn");
+const amount = document.getElementById("amount");
+
+addButton.addEventListener("click", (e) => {
+  taskMap[freestyleInput.value] = {
+    task: freestyleInput.value,
+    price: parseInt(amount.value),
+  };
+
+  console.log(taskMap);
+
+  const taskDetails = taskMap[freestyleInput.value];
+  if (
+    taskDetails &&
+    !itemsArray.some((item) => item.task === taskDetails.task)
+  ) {
+    itemsArray.push(taskDetails);
+    renderItems();
+  }
 });
 
 renderItems();
