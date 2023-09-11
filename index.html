@@ -8,43 +8,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="header">
         <h1>Invoice creator</h1>
         <h2>Thanks for choosing GoodCorp, LLC!</h2>
       </header>
-      <main>
-        <div class="tasks">
-          <button class="task-btn">Wash car: $10</button>
-          <button class="task-btn">Mow lawn: $20</button>
-          <button class="task-btn">Pull weeds: $30</button>
-        </div>
+        <main>
+          <div class="main-content-container">
+            <div class="tasks">
+              <button class="task-btn" id="car">Wash Car: $10</button>
+              <button class="task-btn" id="lawn">Mow Lawn: $20</button>
+              <button class="task-btn" id="weeds">Pull Weeds: $30</button>
+            </div>
+  
+            <header class="task-header">
+              <h3 class="task-heading">TASK</h3>
+              <h3 class="task-heading">TOTAL</h3>
+            </header>
+  
+            <div class="invoice-items" id="invoice-items"></div>
+  
+            <header class="total-header">
+              <h3 class="total-heading">NOTES</h3>
+              <h3 class="total-heading">TOTAL AMOUNT</h3>
+            </header>
+  
+            <div class="total-details">
+              <p class="invoice-note hide" id="invoice-note">We accept cash, credit card, or PayPal</p>
+              <p class="invoice-total" id="invoice-total">$0</p>
+            </div>
 
-        <div class="headings">
-          <p class="invoice-heading">TASK</p>
-          <p class="invoice-heading">TOTAL</p>
-        </div>
-
-        <div class="invoice-items">
-          <div class="invoice-item">
-            <p class="line-item">Wash car</p>
-            <p class="line-item-price">$10</p>
+            <button class="send-invoice-btn btn-disabled" id="send-invoice-btn"><i class="fa-solid fa-envelope"></i>Send invoice</button>
           </div>
-          <div class="invoice-item">
-            <p class="line-item">Mow lawn</p>
-            <p class="line-item-price">$20</p>
-          </div>
-          <div class="invoice-item">
-            <p class="line-item">Pull weeds</p>
-            <p class="line-item-price">$30</p>
-          </div>
-        </div>
-      </main>
+        </main>
     </div>
     <script src="index.js"></script>
   </body>
