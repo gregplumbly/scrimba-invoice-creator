@@ -243,3 +243,7 @@ main {
   font-size: 0.75rem;
   font-weight: 400;
 }
+.delete-btn {
+  font-size: 0.5rem;
+  cursor: pointer;
+}
