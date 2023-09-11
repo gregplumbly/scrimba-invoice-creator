@@ -101,6 +101,11 @@ sendInvoiceBtn.addEventListener("click", () => {
   // Empty the array
   itemsArray = [];
   // Re-render
+  errorEl.textContent = "";
+  freestyleInput.value = "";
+  document.getElementById("car").classList.remove("btn-disabled");
+  document.getElementById("lawn").classList.remove("btn-disabled");
+  document.getElementById("weeds").classList.remove("btn-disabled");
   renderItems();
   // Hide note
   invoiceNote.classList.add("hide");
