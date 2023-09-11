@@ -132,6 +132,11 @@ main {
   font-size: 2.25rem;
 }
 
+.invoice-total-zero {
+  color: #918E9B;
+}
+
+
 .invoice-items {
   display: flex;
   flex-direction: column;
