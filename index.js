@@ -15,12 +15,14 @@ function renderItems() {
   invoiceItems.innerHTML = "";
 
   if (itemsArray.length) {
-    itemsArray.forEach(({ task, price }) => {
+    itemsArray.forEach(({ task, price }, index) => {
       const invoiceItem = document.createElement("div");
       invoiceItem.classList.add("invoice-item");
       invoiceItem.innerHTML = `
-      <p class="line-item">${task}</p>
+      <p class="line-item" >${task}</p>
+       <button class="delete-btn" id="delete-btn" data-index=${index}>X</button>
       <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
+     
       `;
       invoiceItems.appendChild(invoiceItem);
       sendInvoiceBtn.classList.remove("btn-disabled");
@@ -36,6 +38,18 @@ function renderItems() {
   console.log(total);
 
   totalEl.textContent = `$${total}`;
+
+  // Delete items
+  const deleteBtns = document.querySelectorAll(".delete-btn");
+
+  deleteBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      console.log("delete");
+      const index = e.target.dataset.index;
+      itemsArray.splice(index, 1);
+      renderItems();
+    });
+  });
 }
 
 // Clear invoice on 'Send invoice' button click
