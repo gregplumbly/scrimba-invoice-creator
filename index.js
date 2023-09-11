@@ -1,13 +1,15 @@
 const taskMap = {
-  car: { task: "Wash car", price: 10 },
-  lawn: { task: "Mow lawn", price: 20 },
-  weeds: { task: "Pull weeds", price: 30 },
+  car: { task: "Wash Car", price: 10 },
+  lawn: { task: "Mow Lawn", price: 20 },
+  weeds: { task: "Pull Weeds", price: 30 },
 };
 
 let itemsArray = [];
 
 const invoiceItems = document.getElementById("invoice-items");
 const invoiceNote = document.getElementById("invoice-note");
+const sendInvoiceBtn = document.getElementById("send-invoice-btn");
+const totalEl = document.getElementById("invoice-total");
 
 function renderItems() {
   invoiceItems.innerHTML = "";
@@ -17,31 +19,36 @@ function renderItems() {
       const invoiceItem = document.createElement("div");
       invoiceItem.classList.add("invoice-item");
       invoiceItem.innerHTML = `
-        <p class="line-item">${task}</p>
-        <p class="line-item-price">$${price}</p>
+      <p class="line-item">${task}</p>
+      <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
       `;
       invoiceItems.appendChild(invoiceItem);
+      sendInvoiceBtn.classList.remove("btn-disabled");
+      totalEl.classList.remove("invoice-total-zero");
     });    
 
     invoiceNote.classList.remove("hide");
+    
+  } else {
+    totalEl.classList.add("invoice-total-zero");
   }
 
   const total = itemsArray.reduce((acc, { price }) => acc + price, 0);
   console.log(total);
 
-  const totalEl = document.getElementById("invoice-total");
   totalEl.textContent = `$${total}`;
-
 }
 
 // Clear invoice on 'Send invoice' button click
-document.getElementById("send-invoice-btn").addEventListener("click", () => {
+sendInvoiceBtn.addEventListener("click", () => {
   // Empty the array
   itemsArray = [];
   // Re-render
   renderItems();
   // Hide note
-  invoiceNote.classList.add('hide');
+  invoiceNote.classList.add("hide");
+  // Disable 'Send Invoice button'
+  sendInvoiceBtn.classList.add("btn-disabled");
 });
 
 document.querySelectorAll(".task-btn").forEach((btn) => {
