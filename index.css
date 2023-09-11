@@ -237,3 +237,9 @@ main {
   gap: 12px;
   margin-top: 50px;
 }
+
+.error {
+  color: red;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
