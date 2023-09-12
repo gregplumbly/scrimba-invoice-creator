@@ -16,12 +16,14 @@ p {
 
 body {
   background: #1c1c1c;
-  font-family: 'Inter', sans-serif;
 }
 
 button {
-  font-family: 'Inter', sans-serif;
   cursor: pointer;
+}
+
+input, select, button, body {
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -41,19 +43,19 @@ button {
   gap: 9px;
 }
 
-h1 {
+h1, h2 {
   color: #2b283a;
+}
+
+h1 {
   font-size: 2.5rem;
-  font-style: normal;
   font-weight: 800;
   line-height: 40px;
   letter-spacing: -0.8px;
 }
 
 h2 {
-  color: #2b283a;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 400;
   line-height: 28px;
 }
@@ -64,10 +66,11 @@ main {
   padding: 38px 38px;
 }
 
+/* Button styling */
 .task-btn {
   border-radius: 7px;
   border: 1px solid #d5d4d8;
-  background: #fff;  
+  background: #fff;
   color: #4a4e74;
   width: 143px;
   height: 45px;
@@ -77,33 +80,106 @@ main {
   font-weight: 500;
 }
 
+.task-btn:hover {
+  background: #3770ED;
+  color: #FFF;
+}
+
+.freetext-btn {
+  height: 40px;
+  width: 11%;
+  font-size: 1.5rem;
+  background: #3770ED;
+  color: #FFF;
+  border: none;
+  border-radius: 0px 7px 7px 0px;
+}
+
+.freetext-btn:hover {
+  background: #2c59bd;
+}
+
+.delete-btn {
+  color: #918E9B;
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.delete-btn:hover {
+  color: #ff4c4c;
+}
+
+/* Custom Task input styling */
+.freetext-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-input {
+  border-radius: 7px 0 0 7px;
+  border: 1px solid #d5d4d8;
+  background: #FFF;
+  color: #4A4E74;
+  width: 69%;
+  height: 40px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  width: 70%;
+  padding: 0 0 0 10px;
+}
+
+.task-input::placeholder {
+  color: #888;
+  font-weight: 400;
+}
+
+/* select */
+.amount-select {
+  height: 40px;
+  width: 20%;
+  text-align: left;
+  padding-left: 5px;
+  color: #1F2937;
+  font-weight: 300;
+  font-size: 1.375rem;
+  background: #F6F6F6;
+  border: 1px solid #D5D4D8;
+  border-left: none;
+  cursor: pointer;
+}
+
 .tasks {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.task-header{
+.task-header {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
-  color: #918E9B;
+  color: #918e9b;
   margin-top: 43px;
 }
 
 .total-header {
   display: flex;
   justify-content: space-between;
-  color: #918E9B;
+  color: #918e9b;
   font-size: 0.75rem;
   line-height: 32px;
   padding-top: 11px;
-  border-top: 1px solid #C3C6DB;
+  border-top: 1px solid #c3c6db;
 }
 
-.task-heading, .total-heading {
+.task-heading,
+.total-heading {
   margin: 0;
-  font-size: 0.75rem; 
+  font-size: 0.75rem;
 }
 
 .task-heading {
@@ -123,19 +199,18 @@ main {
 .invoice-note {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #4A4E74;
+  color: #4a4e74;
 }
 
 .invoice-total {
-  color: #4A4E74;
+  color: #4a4e74;
   font-weight: 600;
   font-size: 2.25rem;
 }
 
 .invoice-total-zero {
-  color: #918E9B;
+  color: #918e9b;
 }
-
 
 .invoice-items {
   display: flex;
@@ -160,10 +235,11 @@ main {
 
 .line-item {
   margin: 0;
+  text-transform: capitalize;
 }
 
 .line-item-price {
-  color: #918E9B;
+  color: #918e9b;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 300;
@@ -172,21 +248,12 @@ main {
 }
 
 .line-item-price-amt {
-  color: #4A4E74;
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.btn-disabled {
-  opacity: 50%;
-  cursor: not-allowed;
+  color: #4a4e74;
 }
 
 .send-invoice-btn {
-  background: #3770ED;
-  color: #FFF;
+  background: #3770ed;
+  color: #fff;
   font-size: 1rem;
   padding: 9px 0;
   width: 100%;
@@ -197,4 +264,19 @@ main {
   align-items: center;
   gap: 12px;
   margin-top: 50px;
+}
+
+.task-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+/* Utility classes */
+.hide {
+  visibility: hidden;
+}
+
+.btn-disabled {
+  opacity: 50%;
+  cursor: not-allowed;
 }
