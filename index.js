@@ -49,7 +49,6 @@ function renderItems() {
   deleteBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const index = e.target.dataset.index;
-      console.log(index);
       deleteTask(index);
     });
   });
@@ -59,12 +58,10 @@ function renderItems() {
 
 function updateTotal() {
   const total = itemsArray.reduce((acc, { price }) => acc + price, 0);
-  console.log(total);
   totalEl.textContent = `$${total}`;
 }
 
 function deleteTask(index) {
-  console.log(index);
   // Re-enable the appropriate button
   if (itemsArray[index].task === "wash car") {
     document.getElementById("car").classList.remove("btn-disabled");
@@ -83,7 +80,6 @@ function validateInput() {
   const taskPrice = parseInt(amount.value);
 
   let errorMessage = "";
-  console.log(taskDescription);
   if (!taskDescription) {
     errorMessage =
       "Task description cannot be empty. Please enter a task description and add again.";
@@ -98,7 +94,6 @@ function validateInput() {
   }
 
   if (errorMessage) {
-    console.error(errorMessage);
     // Optionally, display the error message in your UI
     errorEl.textContent = errorMessage;
     return false;
