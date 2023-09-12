@@ -22,15 +22,13 @@ function renderItems() {
       const invoiceItem = document.createElement("div");
       invoiceItem.classList.add("invoice-item");
       invoiceItem.innerHTML = `
-
-      <div class="task-wrapper">
+       <div class="task-wrapper">
         <p class="line-item" >${task}</p>
         <button class="delete-btn" id="delete-btn" data-index=${index}>
           <i class="fa-solid fa-trash-can" data-index=${index}></i>
         </button>
       </div>
-      <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
-   
+\      <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
       `;
       invoiceItems.appendChild(invoiceItem);
       sendInvoiceBtn.classList.remove("btn-disabled");
@@ -47,6 +45,7 @@ function renderItems() {
   deleteBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const index = e.target.dataset.index;
+      console.log(index);
       deleteTask(index);
     });
   });
@@ -61,6 +60,7 @@ function updateTotal() {
 }
 
 function deleteTask(index) {
+  console.log(index);
   // Re-enable the appropriate button
   if (itemsArray[index].task === "Wash Car") {
     document.getElementById("car").classList.remove("btn-disabled");
@@ -79,7 +79,7 @@ function validateInput() {
   const taskPrice = parseInt(amount.value);
 
   let errorMessage = "";
-
+  console.log(taskDescription);
   if (!taskDescription) {
     errorMessage =
       "Task description cannot be empty. Please enter a task description and add again.";
@@ -154,9 +154,6 @@ addButton.addEventListener("click", (e) => {
       renderItems();
     }
   }
-
-  // Clear input field after adding task
-  freestyleInput.value = "";
 });
 
 renderItems();
