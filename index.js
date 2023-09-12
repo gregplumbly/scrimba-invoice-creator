@@ -4,7 +4,7 @@ const sendInvoiceBtn = document.getElementById("send-invoice-btn");
 const totalEl = document.getElementById("invoice-total");
 const freestyleInput = document.getElementById("freetext-input");
 const addButton = document.getElementById("freetext-btn");
-const amount = document.getElementById("amount");
+const amount = document.getElementById("amount-select");
 const errorEl = document.getElementById("error");
 const taskMap = {
   car: { task: "wash car", price: 10 },
@@ -26,7 +26,7 @@ function renderItems() {
       <div class="task-wrapper">
         <p class="line-item" >${task}</p>
         <button class="delete-btn" id="delete-btn" data-index=${index}>
-          <i class="fa-solid fa-trash-can"></i>
+          <i class="fa-solid fa-trash-can" data-index=${index}></i>
         </button>
       </div>
       <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
@@ -136,7 +136,6 @@ document.querySelectorAll(".task-btn").forEach((btn) => {
   });
 });
 
-
 // Add free form items
 addButton.addEventListener("click", (e) => {
   if (validateInput()) {
@@ -145,9 +144,7 @@ addButton.addEventListener("click", (e) => {
       price: parseInt(amount.value),
     };
 
-
     const taskDetails = taskMap[freestyleInput.value];
-
 
     if (
       taskDetails &&
@@ -156,7 +153,6 @@ addButton.addEventListener("click", (e) => {
       itemsArray.push(taskDetails);
       renderItems();
     }
-
   }
 
   // Clear input field after adding task
