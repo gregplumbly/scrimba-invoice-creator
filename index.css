@@ -266,6 +266,17 @@ main {
   margin-top: 50px;
 }
 
+
+.error {
+  color: red;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.delete-btn {
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+
 .task-wrapper {
   display: flex;
   gap: 15px;
@@ -280,3 +291,4 @@ main {
   opacity: 50%;
   cursor: not-allowed;
 }
+
