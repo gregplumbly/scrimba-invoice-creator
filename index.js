@@ -75,6 +75,10 @@ function deleteTask(index) {
   renderItems();
 }
 
+freestyleInput.addEventListener("input", () => {
+  errorEl.textContent = "";
+});
+
 function validateInput() {
   const taskDescription = freestyleInput.value.trim();
   const taskPrice = parseInt(amount.value);
