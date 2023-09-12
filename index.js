@@ -27,7 +27,7 @@ function renderItems() {
       invoiceItem.classList.add("invoice-item");
       invoiceItem.innerHTML = `
        <div class="task-wrapper">
-        <p class="line-item" >${task}</p>
+        <li class="line-item" >${task}</li>
         <button class="delete-btn" id="delete-btn" data-index=${index}>
           <i class="fa-solid fa-trash-can" data-index=${index}></i>
         </button>
@@ -76,7 +76,7 @@ function deleteTask(index) {
 }
 
 function clearFreeformInput() {
-    freestyleInput.value = "";
+  freestyleInput.value = "";
 }
 
 freestyleInput.addEventListener("input", () => {
