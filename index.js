@@ -143,7 +143,7 @@ document.querySelectorAll(".task-btn").forEach((btn) => {
 addButton.addEventListener("click", (e) => {
   if (validateInput()) {
     taskMap[freestyleInput.value] = {
-      task: freestyleInput.value,
+      task: freestyleInput.value.trim(),
       price: parseInt(amount.value),
     };
 
