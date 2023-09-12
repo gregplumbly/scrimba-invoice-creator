@@ -235,6 +235,7 @@ main {
 
 .line-item {
   margin: 0;
+  text-transform: capitalize;
 }
 
 .line-item-price {
