@@ -83,12 +83,12 @@ document.querySelectorAll(".task-btn").forEach((btn) => {
 
 // entering tasks manually
 const freestyleInput = document.getElementById("freetext-input");
-const addButton = document.getElementById("freetext-btn");
+const addBtn = document.getElementById("freetext-btn");
 const amount = document.getElementById("amount-select");
 
-addButton.addEventListener("click", (e) => {
+addBtn.addEventListener("click", (e) => {
   const customTaskName = freestyleInput.value.toLowerCase();
-  
+
   taskMap[customTaskName] = {
     task: customTaskName,
     price: parseInt(amount.value),
@@ -96,7 +96,7 @@ addButton.addEventListener("click", (e) => {
 
   console.log(taskMap);
 
-  const taskDetails = taskMap[freestyleInput.value];
+  const taskDetails = taskMap[customTaskName];
   if (
     taskDetails &&
     !itemsArray.some((item) => item.task === taskDetails.task)
