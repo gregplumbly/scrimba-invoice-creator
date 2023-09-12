@@ -17,6 +17,10 @@ let itemsArray = [];
 function renderItems() {
   invoiceItems.innerHTML = "";
 
+  if (itemsArray.length === 0) {
+    sendInvoiceBtn.classList.add("btn-disabled");
+  }
+
   if (itemsArray.length) {
     itemsArray.forEach(({ task, price }, index) => {
       const invoiceItem = document.createElement("div");
@@ -62,11 +66,11 @@ function updateTotal() {
 function deleteTask(index) {
   console.log(index);
   // Re-enable the appropriate button
-  if (itemsArray[index].task === "Wash Car") {
+  if (itemsArray[index].task === "wash car") {
     document.getElementById("car").classList.remove("btn-disabled");
-  } else if (itemsArray[index].task === "Mow Lawn") {
+  } else if (itemsArray[index].task === "mow Lawn") {
     document.getElementById("lawn").classList.remove("btn-disabled");
-  } else if (itemsArray[index].task === "Pull Weeds") {
+  } else if (itemsArray[index].task === "pull weeds") {
     document.getElementById("weeds").classList.remove("btn-disabled");
   }
 
