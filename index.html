@@ -42,7 +42,7 @@
               <option value="30">$30</option>
               <option value="50">$50</option>
             </select>
-            <button type="submit" class="freetext-btn" id="freetext-btn">
+            <button type="submit" class="freetext-btn" id="freetext-btn" aria-label="add task">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
@@ -51,9 +51,9 @@
 
           <!-- start buttons -->
           <div class="tasks">
-            <button class="task-btn" id="car">Wash Car: $10</button>
-            <button class="task-btn" id="lawn">Mow Lawn: $20</button>
-            <button class="task-btn" id="weeds">Pull Weeds: $30</button>
+            <button class="task-btn" id="car" aria-label="add wash car">Wash Car: $10</button>
+            <button class="task-btn" id="lawn" aria-label="add mow lawn">Mow Lawn: $20</button>
+            <button class="task-btn" id="weeds" aria-label="add pull weeds">Pull Weeds: $30</button>
           </div>
 
           <header class="task-header">
@@ -77,7 +77,7 @@
             <p class="invoice-total" id="invoice-total">$0</p>
           </div>
 
-          <button class="send-invoice-btn btn-disabled" id="send-invoice-btn">
+          <button class="send-invoice-btn btn-disabled" id="send-invoice-btn" aria-label="send invoice">
             <i class="fa-solid fa-envelope"></i>Send invoice
           </button>
         </div>
