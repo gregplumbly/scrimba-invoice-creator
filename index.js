@@ -1,7 +1,7 @@
 const taskMap = {
-  car: { task: "Wash Car", price: 10 },
-  lawn: { task: "Mow Lawn", price: 20 },
-  weeds: { task: "Pull Weeds", price: 30 },
+  car: { task: "wash car", price: 10 },
+  lawn: { task: "mow lawn", price: 20 },
+  weeds: { task: "pull weeds", price: 30 },
 };
 
 let itemsArray = [];
@@ -84,11 +84,13 @@ document.querySelectorAll(".task-btn").forEach((btn) => {
 // entering tasks manually
 const freestyleInput = document.getElementById("freetext-input");
 const addButton = document.getElementById("freetext-btn");
-const amount = document.getElementById("amount");
+const amount = document.getElementById("amount-select");
 
 addButton.addEventListener("click", (e) => {
-  taskMap[freestyleInput.value] = {
-    task: freestyleInput.value,
+  const customTaskName = freestyleInput.value.toLowerCase();
+  
+  taskMap[customTaskName] = {
+    task: customTaskName,
     price: parseInt(amount.value),
   };
 
@@ -102,6 +104,9 @@ addButton.addEventListener("click", (e) => {
     itemsArray.push(taskDetails);
     renderItems();
   }
+
+  // Clear input field after adding task
+  freestyleInput.value = "";
 });
 
 renderItems();
