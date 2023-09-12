@@ -4,12 +4,12 @@ const sendInvoiceBtn = document.getElementById("send-invoice-btn");
 const totalEl = document.getElementById("invoice-total");
 const freestyleInput = document.getElementById("freetext-input");
 const addButton = document.getElementById("freetext-btn");
-const amount = document.getElementById("amount");
+const amount = document.getElementById("amount-select");
 const errorEl = document.getElementById("error");
 const taskMap = {
-  car: { task: "Wash Car", price: 10 },
-  lawn: { task: "Mow Lawn", price: 20 },
-  weeds: { task: "Pull Weeds", price: 30 },
+  car: { task: "wash car", price: 10 },
+  lawn: { task: "mow lawn", price: 20 },
+  weeds: { task: "pull weeds", price: 30 },
 };
 
 let itemsArray = [];
@@ -22,7 +22,12 @@ function renderItems() {
       const invoiceItem = document.createElement("div");
       invoiceItem.classList.add("invoice-item");
       invoiceItem.innerHTML = `
-      <p class="line-item" >${task} <span class="delete-btn" id="delete-btn" data-index=${index}>Remove item</span></p>
+       <div class="task-wrapper">
+        <p class="line-item" >${task}</p>
+        <button class="delete-btn" id="delete-btn" data-index=${index}>
+          <i class="fa-solid fa-trash-can" data-index=${index}></i>
+        </button>
+      </div>
 \      <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
       `;
       invoiceItems.appendChild(invoiceItem);
@@ -40,6 +45,7 @@ function renderItems() {
   deleteBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const index = e.target.dataset.index;
+      console.log(index);
       deleteTask(index);
     });
   });
@@ -54,6 +60,7 @@ function updateTotal() {
 }
 
 function deleteTask(index) {
+  console.log(index);
   // Re-enable the appropriate button
   if (itemsArray[index].task === "Wash Car") {
     document.getElementById("car").classList.remove("btn-disabled");
@@ -72,7 +79,7 @@ function validateInput() {
   const taskPrice = parseInt(amount.value);
 
   let errorMessage = "";
-
+  console.log(taskDescription);
   if (!taskDescription) {
     errorMessage =
       "Task description cannot be empty. Please enter a task description and add again.";
