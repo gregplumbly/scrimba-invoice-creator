@@ -99,6 +99,17 @@ main {
   background: #2c59bd;
 }
 
+.delete-btn {
+  color: #918E9B;
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.delete-btn:hover {
+  color: #ff4c4c;
+}
+
 /* Custom Task input styling */
 .freetext-form {
   display: flex;
@@ -252,17 +263,6 @@ main {
   align-items: center;
   gap: 12px;
   margin-top: 50px;
-}
-
-.delete-btn {
-  color: #918E9B;
-  border: none;
-  background: none;
-  font-size: 1rem;
-}
-
-.delete-btn:hover {
-  color: #ff4c4c;
 }
 
 .task-wrapper {
