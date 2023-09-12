@@ -7,9 +7,9 @@ const addButton = document.getElementById("freetext-btn");
 const amount = document.getElementById("amount");
 const errorEl = document.getElementById("error");
 const taskMap = {
-  car: { task: "Wash Car", price: 10 },
-  lawn: { task: "Mow Lawn", price: 20 },
-  weeds: { task: "Pull Weeds", price: 30 },
+  car: { task: "wash car", price: 10 },
+  lawn: { task: "mow lawn", price: 20 },
+  weeds: { task: "pull weeds", price: 30 },
 };
 
 let itemsArray = [];
@@ -22,8 +22,15 @@ function renderItems() {
       const invoiceItem = document.createElement("div");
       invoiceItem.classList.add("invoice-item");
       invoiceItem.innerHTML = `
-      <p class="line-item" >${task} <span class="delete-btn" id="delete-btn" data-index=${index}>Remove item</span></p>
-\      <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
+
+      <div class="task-wrapper">
+        <p class="line-item" >${task}</p>
+        <button class="delete-btn" id="delete-btn" data-index=${index}>
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+      <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
+   
       `;
       invoiceItems.appendChild(invoiceItem);
       sendInvoiceBtn.classList.remove("btn-disabled");
@@ -129,6 +136,7 @@ document.querySelectorAll(".task-btn").forEach((btn) => {
   });
 });
 
+
 // Add free form items
 addButton.addEventListener("click", (e) => {
   if (validateInput()) {
@@ -137,7 +145,9 @@ addButton.addEventListener("click", (e) => {
       price: parseInt(amount.value),
     };
 
+
     const taskDetails = taskMap[freestyleInput.value];
+
 
     if (
       taskDetails &&
@@ -146,7 +156,11 @@ addButton.addEventListener("click", (e) => {
       itemsArray.push(taskDetails);
       renderItems();
     }
+
   }
+
+  // Clear input field after adding task
+  freestyleInput.value = "";
 });
 
 renderItems();

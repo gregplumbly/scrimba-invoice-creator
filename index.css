@@ -16,12 +16,14 @@ p {
 
 body {
   background: #1c1c1c;
-  font-family: "Inter", sans-serif;
 }
 
 button {
-  font-family: "Inter", sans-serif;
   cursor: pointer;
+}
+
+input, select, button, body {
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -41,19 +43,19 @@ button {
   gap: 9px;
 }
 
-h1 {
+h1, h2 {
   color: #2b283a;
+}
+
+h1 {
   font-size: 2.5rem;
-  font-style: normal;
   font-weight: 800;
   line-height: 40px;
   letter-spacing: -0.8px;
 }
 
 h2 {
-  color: #2b283a;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 400;
   line-height: 28px;
 }
@@ -64,6 +66,7 @@ main {
   padding: 38px 38px;
 }
 
+/* Button styling */
 .task-btn {
   border-radius: 7px;
   border: 1px solid #d5d4d8;
@@ -77,43 +80,76 @@ main {
   font-weight: 500;
 }
 
+.task-btn:hover {
+  background: #3770ED;
+  color: #FFF;
+}
+
+.freetext-btn {
+  height: 40px;
+  width: 11%;
+  font-size: 1.5rem;
+  background: #3770ED;
+  color: #FFF;
+  border: none;
+  border-radius: 0px 7px 7px 0px;
+}
+
+.freetext-btn:hover {
+  background: #2c59bd;
+}
+
+.delete-btn {
+  color: #918E9B;
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.delete-btn:hover {
+  color: #ff4c4c;
+}
+
+/* Custom Task input styling */
 .freetext-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* border: #3770ed 1px solid; */
   margin-bottom: 10px;
 }
 
 .task-input {
-  /* border-radius: 7px; */
-  /* border: 1px solid #d5d4d8; */
-  border: 1px solid lightgray;
-  background: #fff;
-  color: #4a4e74;
-  width: 143px;
+  border-radius: 7px 0 0 7px;
+  border: 1px solid #d5d4d8;
+  background: #FFF;
+  color: #4A4E74;
+  width: 69%;
   height: 40px;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   font-weight: 500;
   width: 70%;
   padding: 0 0 0 10px;
 }
 
-/* select */
-.amount {
-  height: 40px;
-  width: 15%;
+.task-input::placeholder {
+  color: #888;
+  font-weight: 400;
 }
 
-.freetext-btn {
+/* select */
+.amount-select {
   height: 40px;
-  width: 40px;
-  font-size: 20px;
-  width: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 20%;
+  text-align: left;
+  padding-left: 5px;
+  color: #1F2937;
+  font-weight: 300;
+  font-size: 1.375rem;
+  background: #F6F6F6;
+  border: 1px solid #D5D4D8;
+  border-left: none;
+  cursor: pointer;
 }
 
 .tasks {
@@ -199,6 +235,7 @@ main {
 
 .line-item {
   margin: 0;
+  text-transform: capitalize;
 }
 
 .line-item-price {
@@ -212,15 +249,6 @@ main {
 
 .line-item-price-amt {
   color: #4a4e74;
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.btn-disabled {
-  opacity: 50%;
-  cursor: not-allowed;
 }
 
 .send-invoice-btn {
@@ -238,6 +266,7 @@ main {
   margin-top: 50px;
 }
 
+
 .error {
   color: red;
   font-size: 0.75rem;
@@ -247,3 +276,19 @@ main {
   font-size: 0.5rem;
   cursor: pointer;
 }
+
+.task-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+/* Utility classes */
+.hide {
+  visibility: hidden;
+}
+
+.btn-disabled {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
