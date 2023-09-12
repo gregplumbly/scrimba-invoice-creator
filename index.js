@@ -75,6 +75,10 @@ function deleteTask(index) {
   renderItems();
 }
 
+function clearFreeformInput() {
+    freestyleInput.value = "";
+}
+
 freestyleInput.addEventListener("input", () => {
   errorEl.textContent = "";
 });
@@ -98,6 +102,8 @@ function validateInput() {
   }
 
   if (errorMessage) {
+    // Clear the input field
+    clearFreeformInput();
     // Optionally, display the error message in your UI
     errorEl.textContent = errorMessage;
     return false;
@@ -156,6 +162,8 @@ addButton.addEventListener("click", (e) => {
       itemsArray.push(taskDetails);
       renderItems();
     }
+    // Clear the input field
+    clearFreeformInput();
   }
 });
 
