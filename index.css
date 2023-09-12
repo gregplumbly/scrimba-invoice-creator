@@ -22,7 +22,10 @@ button {
   cursor: pointer;
 }
 
-input, select, button, body {
+input,
+select,
+button,
+body {
   font-family: "Inter", sans-serif;
 }
 
@@ -43,7 +46,8 @@ input, select, button, body {
   gap: 9px;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #2b283a;
 }
 
@@ -81,16 +85,16 @@ main {
 }
 
 .task-btn:hover {
-  background: #3770ED;
-  color: #FFF;
+  background: #3770ed;
+  color: #fff;
 }
 
 .freetext-btn {
   height: 40px;
   width: 11%;
   font-size: 1.5rem;
-  background: #3770ED;
-  color: #FFF;
+  background: #3770ed;
+  color: #fff;
   border: none;
   border-radius: 0px 7px 7px 0px;
 }
@@ -100,7 +104,7 @@ main {
 }
 
 .delete-btn {
-  color: #918E9B;
+  color: #918e9b;
   border: none;
   background: none;
   font-size: 1rem;
@@ -122,8 +126,8 @@ main {
 .task-input {
   border-radius: 7px 0 0 7px;
   border: 1px solid #d5d4d8;
-  background: #FFF;
-  color: #4A4E74;
+  background: #fff;
+  color: #4a4e74;
   width: 69%;
   height: 40px;
   font-size: 1.25rem;
@@ -143,11 +147,11 @@ main {
   width: 20%;
   text-align: left;
   padding-left: 5px;
-  color: #1F2937;
+  color: #1f2937;
   font-weight: 300;
   font-size: 1.375rem;
-  background: #F6F6F6;
-  border: 1px solid #D5D4D8;
+  background: #f6f6f6;
+  border: 1px solid #d5d4d8;
   border-left: none;
   cursor: pointer;
 }
@@ -266,15 +270,20 @@ main {
   margin-top: 50px;
 }
 
-
 .error {
   color: red;
   font-size: 0.75rem;
   font-weight: 400;
 }
 .delete-btn {
-  font-size: 0.5rem;
-  cursor: pointer;
+  color: #918e9b;
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.delete-btn:hover {
+  color: #ff4c4c;
 }
 
 .task-wrapper {
@@ -291,4 +300,3 @@ main {
   opacity: 50%;
   cursor: not-allowed;
 }
-

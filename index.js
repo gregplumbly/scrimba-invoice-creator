@@ -68,7 +68,7 @@ function deleteTask(index) {
   // Re-enable the appropriate button
   if (itemsArray[index].task === "wash car") {
     document.getElementById("car").classList.remove("btn-disabled");
-  } else if (itemsArray[index].task === "mow Lawn") {
+  } else if (itemsArray[index].task === "mow lawn") {
     document.getElementById("lawn").classList.remove("btn-disabled");
   } else if (itemsArray[index].task === "pull weeds") {
     document.getElementById("weeds").classList.remove("btn-disabled");
