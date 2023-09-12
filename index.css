@@ -43,8 +43,11 @@ input, select, button, body {
   gap: 9px;
 }
 
-h1 {
+h1, h2 {
   color: #2b283a;
+}
+
+h1 {
   font-size: 2.5rem;
   font-weight: 800;
   line-height: 40px;
@@ -52,7 +55,6 @@ h1 {
 }
 
 h2 {
-  color: #2b283a;
   font-size: 1rem;
   font-weight: 400;
   line-height: 28px;
@@ -64,6 +66,7 @@ main {
   padding: 38px 38px;
 }
 
+/* Button styling */
 .task-btn {
   border-radius: 7px;
   border: 1px solid #d5d4d8;
@@ -82,21 +85,34 @@ main {
   color: #FFF;
 }
 
+.freetext-btn {
+  height: 40px;
+  width: 11%;
+  font-size: 1.5rem;
+  background: #3770ED;
+  color: #FFF;
+  border: none;
+  border-radius: 0px 7px 7px 0px;
+}
+
+.freetext-btn:hover {
+  background: #2c59bd;
+}
+
+/* Custom Task input styling */
 .freetext-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* border: #3770ed 1px solid; */
   margin-bottom: 10px;
 }
 
 .task-input {
   border-radius: 7px 0 0 7px;
-  /* border: 1px solid #d5d4d8; */
-  border: 1px solid lightgray;
-  background: #fff;
-  color: #4a4e74;
+  border: 1px solid #d5d4d8;
+  background: #FFF;
+  color: #4A4E74;
   width: 69%;
   height: 40px;
   font-size: 1.25rem;
@@ -111,7 +127,7 @@ main {
 }
 
 /* select */
-.amount {
+.amount-select {
   height: 40px;
   width: 20%;
   text-align: left;
@@ -123,16 +139,6 @@ main {
   border: 1px solid #D5D4D8;
   border-left: none;
   cursor: pointer;
-}
-
-.freetext-btn {
-  height: 40px;
-  width: 11%;
-  font-size: 1.5rem;
-  background: #3770ED;
-  color: #FFF;
-  border: none;
-  border-radius: 0px 7px 7px 0px;
 }
 
 .tasks {
@@ -233,15 +239,6 @@ main {
   color: #4a4e74;
 }
 
-.hide {
-  visibility: hidden;
-}
-
-.btn-disabled {
-  opacity: 50%;
-  cursor: not-allowed;
-}
-
 .send-invoice-btn {
   background: #3770ed;
   color: #fff;
@@ -255,4 +252,30 @@ main {
   align-items: center;
   gap: 12px;
   margin-top: 50px;
+}
+
+.delete-btn {
+  color: #918E9B;
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.delete-btn:hover {
+  color: #ff4c4c;
+}
+
+.task-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+/* Utility classes */
+.hide {
+  visibility: hidden;
+}
+
+.btn-disabled {
+  opacity: 50%;
+  cursor: not-allowed;
 }

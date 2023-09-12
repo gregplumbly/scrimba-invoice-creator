@@ -19,8 +19,12 @@ function renderItems() {
       const invoiceItem = document.createElement("div");
       invoiceItem.classList.add("invoice-item");
       invoiceItem.innerHTML = `
-      <p class="line-item" >${task}</p>
-       <button class="delete-btn" id="delete-btn" data-index=${index}>X</button>
+      <div class="task-wrapper">
+        <p class="line-item" >${task}</p>
+        <button class="delete-btn" id="delete-btn" data-index=${index}>
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
       <p class="line-item-price">$<span class="line-item-price-amt" id="line-item-price-amt">${price}</span></p>
      
       `;
